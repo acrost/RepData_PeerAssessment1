@@ -58,7 +58,7 @@ median(part1$steps)
 ```
 ## [1] 10765
 ```
-The mean and median are very close
+The mean is 10766.19 and the median is 10765. They are very close to each other.
 
 ## What is the average daily activity pattern?
 1. Make a time series plot of the average number of steps taken during a time interval
@@ -102,8 +102,8 @@ nrow(activity[is.na(activity$steps),])
 ```
 ## [1] 2304
 ```
-
 The total number of missing values in the dataset is 2304.
+
 
 2. Devise a strategy for filling in all missing values in the dataset.
 
@@ -182,7 +182,7 @@ avg_steps_w<-aggregate(steps ~ interval + weekend, clean_activity, mean)
 
 
 ```r
-#lattice plot separated by weekend and weekday
+#lattice panel plot separated by weekend and weekday
 xyplot(avg_steps_w$steps ~ avg_steps_w$interval | avg_steps_w$weekend, 
        type="l", 
        layout=c(1,2),
